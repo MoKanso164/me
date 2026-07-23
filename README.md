@@ -1,1 +1,8 @@
-# me
+{
+  "name": "portfolio-contact-form",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "20.x"
+  }
+}
