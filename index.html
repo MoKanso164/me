@@ -285,6 +285,8 @@ nav.scrolled {
   position: absolute; inset: -6px; border-radius: 32px;
   border: 2px solid transparent;
   background: var(--grad-1) border-box;
+  /* Standard mask for compatibility */
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out; mask-composite: exclude;
   animation: ringRotate 4s linear infinite;
@@ -573,6 +575,15 @@ section { padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 4vw, 3rem); }
   display: none;
 }
 .form-success.show { display: block; animation: fadeIn 0.3s ease; }
+.form-error {
+  padding: 1rem 1.25rem; border-radius: 10px;
+  background: rgba(240,93,255,0.08); border: 1px solid rgba(240,93,255,0.25);
+  color: var(--pink); font-size: 0.9rem; font-weight: 500;
+  display: none;
+}
+.form-error.show { display: block; animation: fadeIn 0.3s ease; }
+.form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+.form-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
 @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
 
 /* ==============================
@@ -714,7 +725,7 @@ footer {
         <a href="https://github.com/MoKanso164" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/mohamad-kanso-1016743aa?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         <a href="mailto:mohammad.kanso.cs@gmail.com" class="social-icon" aria-label="Email">
@@ -729,7 +740,7 @@ footer {
       </div>
       <div class="stat-chips">
         <div class="stat-chip"><strong>5+</strong> Languages</div>
-        <div class="stat-chip"><strong>10+</strong> Projects</div>
+        <div class="stat-chip"><strong>7+</strong> Projects</div>
         <div class="stat-chip"><strong>3+</strong> Years Learning</div>
       </div>
     </div>
@@ -747,10 +758,10 @@ footer {
     <h2 class="section-title reveal" style="transition-delay:0.1s">About <span class="grad">Me</span></h2>
     <div class="about-grid">
       <div class="about-text reveal" style="transition-delay:0.2s">
-        <p>I am a self-taught Computer Science student driven by curiosity and a strong passion for building real-world software solutions. I specialize in developing e-commerce websites, responsive web applications, and desktop applications with a focus on clean code, usability, performance, and scalability.</p>
-        <p>I continuously learn new technologies independently and apply them directly through practical projects and hands-on development. I am passionate about modern frontend development, backend systems, and creating user-friendly digital experiences.</p>
+<p>I am a Computer Science student and a self-taught developer driven by curiosity and passion, as well as a graduate of the Islamic University of Lebanon (IUL). I specialize in developing e-commerce websites, responsive web applications, and desktop applications, with a focus on writing clean, high-quality code while ensuring usability, excellent performance, and scalability.</p>        <p>I continuously learn new technologies independently and apply them directly through practical projects and hands-on development. I am passionate about modern frontend development, backend systems, and creating user-friendly digital experiences.</p>
         <p>I also have experience learning and working with APIs, including integrating external services, handling HTTP requests, working with JSON data, and connecting frontend applications with backend systems.</p>
-        <p>Currently, I am seeking junior developer opportunities and freelance projects where I can continue growing my technical skills while contributing to meaningful and impactful software solutions.</p>
+        <p>
+I can continue developing and enhance my technical skills while contributing to impactful, purposeful software solutions.</p>
         <div class="about-highlights">
           <div class="about-highlight">
             <div class="hl-icon purple">🎓</div>
@@ -777,7 +788,7 @@ footer {
       </div>
       <div class="reveal" style="transition-delay:0.3s">
         <div class="about-stats" style="margin-bottom:2rem">
-          <div class="stat-card"><div class="stat-num" data-count="10">0</div><div class="stat-label">Projects Built</div></div>
+          <div class="stat-card"><div class="stat-num" data-count="7">0</div><div class="stat-label">Projects Built</div></div>
           <div class="stat-card"><div class="stat-num" data-count="7">0</div><div class="stat-label">Languages</div></div>
           <div class="stat-card"><div class="stat-num" data-count="5">0</div><div class="stat-label">Frameworks</div></div>
           <div class="stat-card"><div class="stat-num" data-count="3">0</div><div class="stat-label">Years Learning</div></div>
@@ -812,13 +823,13 @@ footer {
         <div class="focus-icon">🌐</div>
         <div class="focus-title">Web Development</div>
         <div class="focus-desc">Crafting modern, responsive web applications using current best practices and frameworks.</div>
-        <span class="focus-tag">Laravel · PHP · JS</span>
+        <span class="focus-tag">HTML:5 · PHP · JS</span>
       </div>
       <div class="focus-card reveal" style="transition-delay:0.1s">
         <div class="focus-icon">🛒</div>
         <div class="focus-title">E-commerce Websites</div>
         <div class="focus-desc">Building full-featured online stores with payment integration, dashboards, and product management.</div>
-        <span class="focus-tag">Laravel · MySQL</span>
+        <span class="focus-tag">React · MySQL</span>
       </div>
       <div class="focus-card reveal" style="transition-delay:0.15s">
         <div class="focus-icon">🖥️</div>
@@ -842,7 +853,7 @@ footer {
         <div class="focus-icon">⚙️</div>
         <div class="focus-title">Backend Development</div>
         <div class="focus-desc">Designing robust server-side systems, databases, and RESTful APIs that power applications.</div>
-        <span class="focus-tag">PHP · MySQL · Laravel</span>
+        <span class="focus-tag">PHP · MySQL </span>
       </div>
       <div class="focus-card reveal" style="transition-delay:0.35s">
         <div class="focus-icon">🔌</div>
@@ -882,7 +893,7 @@ footer {
         <div class="skills-grid">
           <div class="skill-chip"><div class="skill-chip-icon">🏷️</div><div class="skill-chip-name">HTML5</div><div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div></div>
           <div class="skill-chip"><div class="skill-chip-icon">🎨</div><div class="skill-chip-name">CSS3</div><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div></div>
-          <div class="skill-chip"><div class="skill-chip-icon">🌟</div><div class="skill-chip-name">JavaScript</div><div class="skill-bar"><div class="skill-bar-fill" data-width="78"></div></div></div>
+          <div class="skill-chip"><div class="skill-chip-icon">🌟</div><div class="skill-chip-name">TypeScript</div><div class="skill-bar"><div class="skill-bar-fill" data-width="78"></div></div></div>
           <div class="skill-chip"><div class="skill-chip-icon">⚛️</div><div class="skill-chip-name">React</div><div class="skill-bar"><div class="skill-bar-fill" data-width="68"></div></div></div>
           <div class="skill-chip"><div class="skill-chip-icon">📱</div><div class="skill-chip-name">Flutter</div><div class="skill-bar"><div class="skill-bar-fill" data-width="72"></div></div></div>
         </div>
@@ -927,7 +938,7 @@ footer {
   </div>
   <div class="tech-marquee-wrap reveal">
     <div class="tech-marquee" id="marquee-1">
-      <div class="tech-logo-card"><span class="tech-logo-emoji">🔴</span><span class="tech-logo-name">Laravel</span></div>
+      <div class="tech-logo-card"><span class="tech-logo-emoji">🔴</span><span class="tech-logo-name">TypeScript</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">🐘</span><span class="tech-logo-name">PHP</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">⚛️</span><span class="tech-logo-name">React</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">📱</span><span class="tech-logo-name">Flutter</span></div>
@@ -937,7 +948,7 @@ footer {
       <div class="tech-logo-card"><span class="tech-logo-emoji">🌟</span><span class="tech-logo-name">JavaScript</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">🔷</span><span class="tech-logo-name">C#</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">☕</span><span class="tech-logo-name">Java</span></div>
-      <div class="tech-logo-card"><span class="tech-logo-emoji">🔴</span><span class="tech-logo-name">Laravel</span></div>
+      <div class="tech-logo-card"><span class="tech-logo-emoji">🔴</span><span class="tech-logo-name">TypeScript</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">🐘</span><span class="tech-logo-name">PHP</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">⚛️</span><span class="tech-logo-name">React</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">📱</span><span class="tech-logo-name">Flutter</span></div>
@@ -958,7 +969,6 @@ footer {
       <div class="tech-logo-card"><span class="tech-logo-emoji">🐙</span><span class="tech-logo-name">Git</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">🔷</span><span class="tech-logo-name">ASP.NET</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">🗄️</span><span class="tech-logo-name">Vite</span></div>
-      <div class="tech-logo-card"><span class="tech-logo-emoji">📊</span><span class="tech-logo-name">Blade</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">🏷️</span><span class="tech-logo-name">HTML5</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">🎨</span><span class="tech-logo-name">CSS3</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">🐍</span><span class="tech-logo-name">Python</span></div>
@@ -968,7 +978,6 @@ footer {
       <div class="tech-logo-card"><span class="tech-logo-emoji">🐙</span><span class="tech-logo-name">Git</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">🔷</span><span class="tech-logo-name">ASP.NET</span></div>
       <div class="tech-logo-card"><span class="tech-logo-emoji">🗄️</span><span class="tech-logo-name">Vite</span></div>
-      <div class="tech-logo-card"><span class="tech-logo-emoji">📊</span><span class="tech-logo-name">Blade</span></div>
     </div>
   </div>
 </section>
@@ -989,21 +998,21 @@ footer {
         <div class="project-img">
           <div class="project-img-inner" style="background:linear-gradient(135deg,rgba(124,92,252,0.2),rgba(0,229,204,0.15))">🛒</div>
           <div class="project-img-overlay">
-            <a href="#" class="project-img-btn gh">GitHub</a>
-            <a href="#" class="project-img-btn live">Live Demo</a>
+            <a href="https://github.com/MoKanso164" class="project-img-btn gh">GitHub</a>
+            <a href="https://mokanso164.github.io/E-commerce-Website-/" class="project-img-btn live">Live Demo</a>
           </div>
         </div>
         <div class="project-body">
           <div class="project-tags">
-            <span class="project-tag php">Laravel</span>
-            <span class="project-tag php">PHP</span>
+            <span class="project-tag ts">TypeScript</span>
+            <span class="project-tag js">JavaScript</span>
             <span class="project-tag js">MySQL</span>
           </div>
           <div class="project-title">E-commerce Platform</div>
           <div class="project-desc">A full-featured online store with product management, cart system, order tracking, admin dashboard, and payment integration. Built with Laravel MVC architecture.</div>
           <div class="project-footer">
-            <a href="#" class="btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem">GitHub →</a>
-            <a href="#" class="btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem">Live →</a>
+            <a href="https://github.com/MoKanso164" class="btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem">GitHub →</a>
+            <a href="https://mokanso164.github.io/E-commerce-Website-/" class="btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem">Live →</a>
           </div>
         </div>
       </div>
@@ -1012,7 +1021,7 @@ footer {
         <div class="project-img">
           <div class="project-img-inner" style="background:linear-gradient(135deg,rgba(0,229,204,0.2),rgba(124,92,252,0.12))">📱</div>
           <div class="project-img-overlay">
-            <a href="#" class="project-img-btn gh">GitHub</a>
+            <a href="https://github.com/MoKanso164" class="project-img-btn gh">GitHub</a>
             <a href="#" class="project-img-btn live">Live Demo</a>
           </div>
         </div>
@@ -1025,8 +1034,8 @@ footer {
           <div class="project-title">Nazih DMS — Mobile App</div>
           <div class="project-desc">A Displaced Management System mobile app built with Flutter and Dart, featuring real-time data sync with Supabase, maps integration, and cross-platform Android/iOS support.</div>
           <div class="project-footer">
-            <a href="#" class="btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem">GitHub →</a>
-            <a href="#" class="btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem">Details →</a>
+            <a href="https://github.com/MoKanso164" class="btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem">GitHub →</a>
+            <a href="tel:+96181890497" class="btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem">Details →</a>
           </div>
         </div>
       </div>
@@ -1035,8 +1044,8 @@ footer {
         <div class="project-img">
           <div class="project-img-inner" style="background:linear-gradient(135deg,rgba(240,93,255,0.15),rgba(124,92,252,0.2))">🖥️</div>
           <div class="project-img-overlay">
-            <a href="#" class="project-img-btn gh">GitHub</a>
-            <a href="#" class="project-img-btn live">Details</a>
+            <a href="https://github.com/MoKanso164" class="project-img-btn gh">GitHub</a>
+            <a href="tel:+96181890497" class="project-img-btn live">Details</a>
           </div>
         </div>
         <div class="project-body">
@@ -1048,8 +1057,8 @@ footer {
           <div class="project-title">Desktop Management App</div>
           <div class="project-desc">A cross-platform desktop application built with C# and ASP.NET, featuring data management, reporting, and a modern WPF interface with full database integration.</div>
           <div class="project-footer">
-            <a href="#" class="btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem">GitHub →</a>
-            <a href="#" class="btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem">Details →</a>
+            <a href="https://github.com/MoKanso164" class="btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem">GitHub →</a>
+            <a href="tel:+96181890497" class="btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem">Details →</a>
           </div>
         </div>
       </div>
@@ -1058,8 +1067,8 @@ footer {
         <div class="project-img">
           <div class="project-img-inner" style="background:linear-gradient(135deg,rgba(56,189,248,0.18),rgba(0,229,204,0.15))">⚛️</div>
           <div class="project-img-overlay">
-            <a href="#" class="project-img-btn gh">GitHub</a>
-            <a href="#" class="project-img-btn live">Live Demo</a>
+            <a href="https://github.com/MoKanso164" class="project-img-btn gh">GitHub</a>
+            <a href="tel:+96181890497" class="project-img-btn live">Live Demo</a>
           </div>
         </div>
         <div class="project-body">
@@ -1071,8 +1080,8 @@ footer {
           <div class="project-title">React Web Application</div>
           <div class="project-desc">A modern single-page application built with React featuring REST API integration, dynamic data fetching, state management, and a fully responsive UI design.</div>
           <div class="project-footer">
-            <a href="#" class="btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem">GitHub →</a>
-            <a href="#" class="btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem">Live →</a>
+            <a href="https://github.com/MoKanso164" class="btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem">GitHub →</a>
+            <a href="tel:+96181890497" class="btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem">Live →</a>
           </div>
         </div>
       </div>
@@ -1081,8 +1090,8 @@ footer {
         <div class="project-img">
           <div class="project-img-inner" style="background:linear-gradient(135deg,rgba(255,224,102,0.12),rgba(240,93,255,0.15))">🌐</div>
           <div class="project-img-overlay">
-            <a href="#" class="project-img-btn gh">GitHub</a>
-            <a href="#" class="project-img-btn live">Live Demo</a>
+            <a href="https://github.com/MoKanso164" class="project-img-btn gh">GitHub</a>
+            <a href="tel:+96181890497" class="project-img-btn live">Live Demo</a>
           </div>
         </div>
         <div class="project-body">
@@ -1094,7 +1103,7 @@ footer {
           <div class="project-title">Business Portfolio Website</div>
           <div class="project-desc">A professional business portfolio website with contact forms, admin panel, SEO optimization, and a fully responsive design built from scratch with pure PHP and JS.</div>
           <div class="project-footer">
-            <a href="#" class="btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem">GitHub →</a>
+            <a href="https://github.com/MoKanso164" class="btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem">GitHub →</a>
             <a href="#" class="btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem">Live →</a>
           </div>
         </div>
@@ -1104,7 +1113,7 @@ footer {
         <div class="project-img">
           <div class="project-img-inner" style="background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(240,93,255,0.18))">🔌</div>
           <div class="project-img-overlay">
-            <a href="#" class="project-img-btn gh">GitHub</a>
+            <a href="https://github.com/MoKanso164" class="project-img-btn gh">GitHub</a>
             <a href="#" class="project-img-btn live">Details</a>
           </div>
         </div>
@@ -1117,8 +1126,8 @@ footer {
           <div class="project-title">API Integration Dashboard</div>
           <div class="project-desc">A data dashboard integrating multiple external APIs, handling authentication, real-time updates, JSON parsing, and displaying live data through an interactive UI.</div>
           <div class="project-footer">
-            <a href="#" class="btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem">GitHub →</a>
-            <a href="#" class="btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem">Details →</a>
+            <a href="https://github.com/MoKanso164" class="btn-secondary" style="font-size:0.82rem;padding:0.5rem 1rem">GitHub →</a>
+            <a href="tel:+96181890497" class="btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem">Details →</a>
           </div>
         </div>
       </div>
@@ -1168,10 +1177,10 @@ footer {
         <div class="timeline-title">Laravel, C# & Desktop Applications</div>
         <div class="timeline-desc">Expanded into Laravel for structured backend development, built e-commerce prototypes, and learned C# with ASP.NET for desktop application development. Completed first full-stack projects.</div>
         <div class="timeline-techs">
-          <span class="timeline-tech">Laravel</span>
+          <span class="timeline-tech">Typescript</span>
           <span class="timeline-tech">C#</span>
           <span class="timeline-tech">ASP.NET</span>
-          <span class="timeline-tech">MVC</span>
+          
         </div>
       </div>
       <div class="timeline-item">
@@ -1189,14 +1198,14 @@ footer {
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-date">2024–Present — Production Ready</div>
+        <div class="timeline-date">2025–Present — Production Ready</div>
         <div class="timeline-title">Real Projects & Open for Opportunities</div>
-        <div class="timeline-desc">Building production-grade applications, refining architecture patterns, and actively seeking junior developer roles and freelance projects to apply skills in a professional environment.</div>
+        <div class="timeline-desc">Building production-grade applications, refining architecture patterns, and actively seeking  developer roles and freelance projects to apply skills in a professional environment.</div>
         <div class="timeline-techs">
           <span class="timeline-tech">Full-stack</span>
           <span class="timeline-tech">Open Source</span>
           <span class="timeline-tech">Freelance</span>
-          <span class="timeline-tech">Junior Dev</span>
+          
         </div>
       </div>
     </div>
@@ -1212,7 +1221,7 @@ footer {
   <div class="section-inner">
     <div class="section-label reveal">Get In Touch</div>
     <h2 class="section-title reveal" style="transition-delay:0.1s">Let's <span class="grad">Connect</span></h2>
-    <p class="section-desc reveal" style="transition-delay:0.2s">Open to junior developer roles, freelance projects, and collaboration opportunities. Don't hesitate to reach out.</p>
+    <p class="section-desc reveal" style="transition-delay:0.2s">Open to  developer roles, freelance projects, and collaboration opportunities. Don't hesitate to reach out.</p>
     <div class="contact-grid">
       <div class="reveal" style="transition-delay:0.2s">
         <div class="contact-info">
@@ -1241,10 +1250,10 @@ footer {
         <div style="margin-bottom:1.5rem">
           <div class="contact-label" style="margin-bottom:0.75rem">Find Me Online</div>
           <div class="contact-socials">
-            <a href="https://github.com" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+            <a href="https://www.linkedin.com/in/mohamad-kanso-1016743aa?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/mohamad-kanso-1016743aa?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
           </div>
@@ -1255,13 +1264,16 @@ footer {
             <div style="width:8px;height:8px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite"></div>
             <span style="font-weight:600;color:var(--text)">Available for opportunities</span>
           </div>
-          <p style="font-size:0.85rem;color:var(--text-2);margin-top:0.75rem;line-height:1.65">Open to junior developer roles, freelance web projects, and meaningful collaborations. Response time: within 24 hours.</p>
+          <p style="font-size:0.85rem;color:var(--text-2);margin-top:0.75rem;line-height:1.65">Open to developer roles, freelance web projects, and meaningful collaborations. Response time: within 24 hours.</p>
         </div>
       </div>
       <div class="reveal" style="transition-delay:0.3s">
         <div class="contact-form" id="contact-form">
           <div class="form-success" id="form-success">
             ✅ Message sent! I'll get back to you within 24 hours.
+          </div>
+          <div class="form-error" id="form-error">
+            ⚠️ Something went wrong. Please try again or email me directly.
           </div>
           <div class="form-row">
             <div class="form-group">
@@ -1281,6 +1293,11 @@ footer {
             <label class="form-label" for="message">Message</label>
             <textarea id="message" class="form-textarea" placeholder="Tell me about your project, opportunity, or question..." required></textarea>
           </div>
+          <!-- Honeypot field: invisible to real visitors, bots often fill it in. Do not remove. -->
+          <div class="form-hp" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
           <button type="button" class="form-submit" id="form-btn" onclick="handleSubmit()">Send Message →</button>
         </div>
       </div>
@@ -1295,7 +1312,7 @@ footer {
   <div class="footer-inner">
     <div>
       <div class="footer-logo" style="background:var(--grad-1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.4rem">Mohammad Kanso</div>
-      <div class="footer-copy">© 2024 Mohammad Kanso. Available for junior developer roles and freelance projects.</div>
+      <div class="footer-copy">© 2024 Mohammad Kanso. Available for developer roles and freelance projects.</div>
     </div>
     <ul class="footer-links" role="list">
       <li><a href="#about">About</a></li>
@@ -1304,10 +1321,10 @@ footer {
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="footer-socials">
-      <a href="https://github.com" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
+      <a href="https://github.com/MoKanso164" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
       </a>
-      <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/in/mohamad-kanso-1016743aa?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
       </a>
       <a href="mailto:mohammad.kanso.cs@gmail.com" class="social-icon" aria-label="Email">
@@ -1493,22 +1510,79 @@ if (aboutGrid) counterObserver.observe(aboutGrid);
 /* ==============================
    CONTACT FORM
 ================================ */
-function handleSubmit() {
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const msg = document.getElementById('message').value.trim();
-  if (!name || !email || !msg) { alert('Please fill in all required fields.'); return; }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
+async function handleSubmit() {
+  const nameEl = document.getElementById('name');
+  const emailEl = document.getElementById('email');
+  const subjectEl = document.getElementById('subject');
+  const msgEl = document.getElementById('message');
+  const hpEl = document.getElementById('website'); // honeypot, must stay empty
   const btn = document.getElementById('form-btn');
-  btn.textContent = 'Sending...'; btn.disabled = true;
-  setTimeout(() => {
-    document.getElementById('form-success').classList.add('show');
-    btn.textContent = 'Send Message →'; btn.disabled = false;
-    document.getElementById('name').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('subject').value = '';
-    document.getElementById('message').value = '';
-  }, 1200);
+  const successBox = document.getElementById('form-success');
+  const errorBox = document.getElementById('form-error');
+
+  const name = nameEl.value.trim();
+  const email = emailEl.value.trim();
+  const subject = subjectEl.value.trim();
+  const message = msgEl.value.trim();
+
+  successBox.classList.remove('show');
+  errorBox.classList.remove('show');
+
+  // ---- Client-side validation ----
+  if (!name || !email || !message) {
+    errorBox.textContent = '⚠️ Please fill in all required fields.';
+    errorBox.classList.add('show');
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errorBox.textContent = '⚠️ Please enter a valid email address.';
+    errorBox.classList.add('show');
+    return;
+  }
+  if (message.length < 2) {
+    errorBox.textContent = '⚠️ Your message looks empty. Please add some detail.';
+    errorBox.classList.add('show');
+    return;
+  }
+
+  const originalLabel = btn.textContent;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name,
+        email,
+        subject,
+        message,
+        website: hpEl ? hpEl.value : '', // honeypot — should be empty
+        clientTime: new Date().toString(),
+        userAgent: navigator.userAgent
+      })
+    });
+
+    let data = {};
+    try { data = await res.json(); } catch (_) { /* non-JSON response */ }
+
+    if (!res.ok || !data.success) {
+      throw new Error(data.error || 'Failed to send message.');
+    }
+
+    successBox.classList.add('show');
+    nameEl.value = '';
+    emailEl.value = '';
+    subjectEl.value = '';
+    msgEl.value = '';
+  } catch (err) {
+    errorBox.textContent = '⚠️ Could not send your message. Please try again in a moment, or email me directly.';
+    errorBox.classList.add('show');
+  } finally {
+    btn.textContent = originalLabel;
+    btn.disabled = false;
+  }
 }
 </script>
 </body>
